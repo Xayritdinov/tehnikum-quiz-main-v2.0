@@ -1,0 +1,24 @@
+input {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #aeb4c2;
+}
+input::-moz-placeholder {
+    color: #5a6684;
+}
+input::placeholder {
+    color: #5a6684;
+}
+input:focus {
+    border-bottom-color: #a497f9;
+}
+input:disabled {
+    color: #b8bcc5;
+    border-bottom-color: #b8bcc5;
+}
+input:disabled::-moz-placeholder {
+    color: #b8bcc5;
+}
+input:disabled::placeholder {
+    color: #b8bcc5;
+}
