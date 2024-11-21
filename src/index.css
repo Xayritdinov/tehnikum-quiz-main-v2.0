@@ -1,0 +1,10 @@
+.time {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    position: absolute;
+    margin-bottom: 10px;
+    bottom: 0;
+}

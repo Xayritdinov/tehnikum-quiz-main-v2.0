@@ -10,7 +10,7 @@ export const StepTwo = () => {
     <div className="container">
       <div className="wrapper">
         <div className="variants-quiz">
-          <Progress active={0}/>          
+          <Progress active={1}/>          
           <form className="question">
             <h2>1. Занимательный вопрос</h2>
             <Ul className="variants">             

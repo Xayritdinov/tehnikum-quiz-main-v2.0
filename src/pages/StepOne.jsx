@@ -8,7 +8,7 @@ export const StepOne = () => {
     <div className="container">
       <div className="wrapper">
         <div className="single-input-quiz">
-          <Progress />          
+          <Progress active={0}/>          
           <form className="question">
             <h2>1. Занимательный вопрос</h2>
             <Input type="text" name="answer" placeholder="Ваш ответ" errorMessage="Введите ответ в правильном формате"/>            

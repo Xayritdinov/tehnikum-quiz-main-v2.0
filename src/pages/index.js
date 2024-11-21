@@ -4,3 +4,4 @@ export { StepTwo } from './StepTwo';
 export { StepThree } from './StepThree';
 export { StepFour } from './StepFour';
 export { Thanks } from './Thanks';
+export { Time } from './Time';

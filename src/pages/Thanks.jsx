@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "../components";
+import { Button, Progress } from "../components";
 
 export const Thanks = () => {
   
@@ -8,6 +8,7 @@ export const Thanks = () => {
     <div className="container">
       <div className="wrapper">
         <div className="thanks">
+          <Progress active={4}/>
           <img src="./img/bell.png" alt="bell" />
           <h1>Спасибо за прохождение опроса!</h1>
           <p>Получи свою скидку по ссылке ниже или другое блаблабла</p>

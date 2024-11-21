@@ -10,7 +10,7 @@ export const StepFour = () => {
     <div className="container">
       <div className="wrapper">
         <div className="emoji-quiz">
-          <Progress active={2}/>          
+          <Progress active={3}/>          
           <form className="question">
             <h2>4. Занимательный вопрос</h2>
             <Ul className="level-variants">

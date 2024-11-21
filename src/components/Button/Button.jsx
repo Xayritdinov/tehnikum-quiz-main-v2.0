@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./Button.css";
 
-export const Button = ({ disabled, step, text="Далее", type="submit", id="next-btn" }) => {
+export const Button = ({ disabled, step, text="Далее", type="button", id="next-btn" }) => {
 
     const navigate = useNavigate();
 

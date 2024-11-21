@@ -31,8 +31,8 @@ export const StepThree = () => {
     <div className="container">
       <div className="wrapper">
         <div className="emoji-quiz">
-          <Progress active={1}/>          
-          <form className="question">
+          <Progress active={2}/>          
+          <form className="question"> <br/><br/>
             <h2>3. Занимательный вопрос</h2>
             <Ul className="emoji-variants">
               {answers.map((answer, index) => (
