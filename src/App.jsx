@@ -1,27 +1,27 @@
 import React from "react";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 
-import { Welcome, StepOne, StepTwo, StepThree, StepFour, Thanks, Time } from "./pages";
+import { Welcome, StepOne, StepTwo, StepThree, StepFour, Thanks, Time, Step } from "./pages";
 
 import "./App.css";
 import "./styles/main.css";
 
+
 export const App = () => {
   
   return (
-    <>   
-      <Router>
-        <Routes>        
-          <Route path="/" element={<Welcome />} />
-          <Route path="/step-one" element={<StepOne />} />
-          <Route path="/step-two" element={<StepTwo />} />
-          <Route path="/step-three" element={<StepThree />} />
-          <Route path="/step-four" element={<StepFour />} />
-          <Route path="/thanks" element={<Thanks />} />
-        </Routes>
-      </Router>
-
+    <> 
+      <Routes>        
+        <Route index element={<Welcome />} />
+        <Route path="/step" element={<Step />}>
+          <Route index path="1" element={<StepOne />} />
+          <Route path="2" element={<StepTwo />} />
+          <Route path="3" element={<StepThree />} />
+          <Route path="4" element={<StepFour />} />
+        </Route>            
+        <Route path="thanks" element={<Thanks />} />
+      </Routes>
       <Time/>
     </>      
   );

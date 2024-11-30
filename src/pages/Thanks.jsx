@@ -1,18 +1,17 @@
 import React from "react";
 
-import { Button, Progress } from "../components";
+import { Button } from "../components";
 
 export const Thanks = () => {
   
-  return (
+  return (  
     <div className="container">
       <div className="wrapper">
         <div className="thanks">
-          <Progress active={4}/>
           <img src="./img/bell.png" alt="bell" />
           <h1>Спасибо за прохождение опроса!</h1>
           <p>Получи свою скидку по ссылке ниже или другое блаблабла</p>
-          <Button type="button" text="Получить ссылку" id="get-link" />          
+          <Button text="Получить ссылку" id="get-link" />          
         </div>
       </div>
     </div>

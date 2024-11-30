@@ -1,33 +1,50 @@
-import React from 'react';
+import React from "react";
+import classNames from "classnames";
 
-export const Progress = ({ active }) => {
-  const units = [1, 2, 3, 4];
-  let percent = 100 / units.length * active;
+export const Progress = ({ steps=4, activeStep }) => {
+  const units = Array(steps).fill(0);  
+
+  let percent = (100 / steps) * (activeStep - 1);
+
+  // const [activeStep, setActiveStep] = useState(1);
+
+  // const nextStep = () => {
+  //   if (activeStep < steps) {
+  //     const newStep = activeStep + 1;
+  //     setActiveStep(newStep);
+  //   }
+  // };
+
+  // const prevStep = () => {
+  //   if (activeStep > 1) {
+  //     const newStep = activeStep - 1;
+  //     setActiveStep(newStep);
+  //   }
+  // };
 
   return (
     <div className="indicator">
       <div className="indicator__text">
-        <span className="indicator__description">
-          Скидка за прохождение опроса:
-        </span>
-        <span className="indicator__value">15%</span>       
+        <span className="indicator__description">Скидка за прохождение опроса:</span>
+        <span className="indicator__value">15%</span>
       </div>
       <div className="indicator__progressbar">
-        {units.map((id, index) => (
+        {units.map((_, index) => (
           <div
             key={index}
-            className={`indicator__unit indicator__unit-${id} ${
-              id <= active ? '_active' : ''
-            }`}
+            className={classNames({
+              indicator__unit: true,
+              [`indicator__unit-${index + 1}`]: true,
+              _active: index < activeStep,
+              _current: index === activeStep - 1,
+            })}
           ></div>
         ))}
-      </div>   
+      </div>
       <div className="indicator__text">
-        <span className="indicator__description">
-        Процесс прохождение опроса:
-        </span>
-        <span className="indicator__value">{percent}%</span>       
-      </div> 
+        <span className="indicator__description">Процесс прохождение опроса:</span>
+        <span className="indicator__value">{percent}%</span>
+      </div>
     </div>
   );
 };
