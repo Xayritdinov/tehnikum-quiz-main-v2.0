@@ -6,12 +6,77 @@
   border: 0;
   box-sizing: border-box;
 }
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+.dark-theme {
+  --bg-color: black;
+  --text-color: white;
+}
+
+nav {
+  position: fixed;
+  top: 10px;
+  right: 10px;  
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.theme-toggle .slider {
+  
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-color);
+  border: 2px solid var(--text-color);
+  border-radius: 25px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.theme-toggle input:checked + .slider {
+  background-color: var(--text-color);
+}
+
+.theme-toggle .slider::before {
+  content: "";
+  position: absolute;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.theme-toggle input:checked + .slider::before {
+  transform: translate(25px, -50%);
+  background-color: var(--bg-color);
+}
 
 body {
   font-family: "TT Hoves";
   font-size: 16px;
   height: 100vh;
-  color: #22222a;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 #root, .App {
@@ -27,7 +92,7 @@ h1 {
 }
 
 h2 {
-  color: #000;
+  /* color: #000; */
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -284,4 +349,84 @@ a {
   font-size: 18px;
   text-align: center;
   margin-bottom: 16px;
+}
+
+.time {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  position: absolute;
+  margin-bottom: 10px;
+  bottom: 0;
+}
+
+button {
+  cursor: pointer;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background-color: #a497f9;
+  color: white;
+  padding: 22.5px 0;
+  transition: 200ms;
+}
+button:disabled {
+  background-color: #b8bcc5;
+}
+button:enabled:hover {
+  background-color: transparent;
+  border-color: #a497f9;
+  color: #a497f9;
+  box-shadow: 0 0 20px #a497f9;
+}
+button:disabled:hover, button:disabled:active {
+  opacity: 0.5;
+  cursor: default;
+}
+button:enabled:active {
+  transition: 100ms;
+  box-shadow: none;
+}
+
+
+
+input {
+  width: 100%;
+  padding: 12px 0;
+  border-bottom: 1px solid #aeb4c2;
+}
+input::-moz-placeholder {
+  color: #5a6684;
+}
+input::placeholder {
+  color: #5a6684;
+}
+input:focus {
+  border-bottom-color: #a497f9;
+}
+input:disabled {
+  color: #b8bcc5;
+  border-bottom-color: #b8bcc5;
+}
+input:disabled::-moz-placeholder {
+  color: #b8bcc5;
+}
+input:disabled::placeholder {
+  color: #b8bcc5;
+}
+.input-wrapper {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.input-wrapper #error-message {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 15px;
+  color: #eb5757;
+  font-size: 12px;
 }

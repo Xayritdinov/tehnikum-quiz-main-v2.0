@@ -4,5 +4,5 @@ export { StepTwo } from './StepTwo';
 export { StepThree } from './StepThree';
 export { StepFour } from './StepFour';
 export { Thanks } from './Thanks';
-export { Time } from './Time';
+export { Time } from '../components/Time/Time';
 export { Step } from './Step';

@@ -1,7 +1,4 @@
-import React from "react";
 import { useNavigate } from "react-router";
-
-import "./Button.css";
 
 export const Button = ({ step, text = "Далее", type = "button", id = "next-btn", ...props }) => {
   const navigate = useNavigate();

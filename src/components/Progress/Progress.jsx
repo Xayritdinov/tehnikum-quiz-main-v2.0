@@ -1,26 +1,9 @@
-import React from "react";
 import classNames from "classnames";
 
 export const Progress = ({ steps=4, activeStep }) => {
   const units = Array(steps).fill(0);  
 
   let percent = (100 / steps) * (activeStep - 1);
-
-  // const [activeStep, setActiveStep] = useState(1);
-
-  // const nextStep = () => {
-  //   if (activeStep < steps) {
-  //     const newStep = activeStep + 1;
-  //     setActiveStep(newStep);
-  //   }
-  // };
-
-  // const prevStep = () => {
-  //   if (activeStep > 1) {
-  //     const newStep = activeStep - 1;
-  //     setActiveStep(newStep);
-  //   }
-  // };
 
   return (
     <div className="indicator">
